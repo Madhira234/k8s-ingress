@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myapp-Ingress
+spec:
+  rules:
+    - host: www.highladderit.com
+      http:
+        paths:
+          - path: /gamer
+            pathType: Prefix
+            backend: 
+              service:
+                name: svc-gamer
+                port:
+                  number: 80
+          - path: /pop
+            pathType: Prefix
+            backend: 
+              service:
+                name: svc-pop
+                port:
+                  number: 80   
+         
